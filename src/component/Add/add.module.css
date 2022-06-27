@@ -1,0 +1,21 @@
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  /* background: url("https://papik.pro/uploads/posts/2021-11/1636581538_1-papik-pro-p-kartinki-fon-bez-risunka-1.jpg"); */
+}
+.addInput {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputStyle {
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

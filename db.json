@@ -1,10 +1,16 @@
 {
   "contacts": [
     {
-      "name": "ILIM",
-      "lastName": "KUSHBEKOV",
-      "number": "+996555777888",
+      "name": "danay",
+      "lastName": "ASD",
+      "number": "2345",
       "id": 1
+    },
+    {
+      "name": "Bolot",
+      "lastName": "K",
+      "number": "0555333445",
+      "id": 2
     }
   ]
 }

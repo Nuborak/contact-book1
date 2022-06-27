@@ -1,6 +1,9 @@
+import { Save } from "@mui/icons-material";
+import { TextField } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ContactContext } from "../../context/ContactContext";
+import styles from "./Edit.module.css";
 
 const Edit = () => {
   const navigate = useNavigate();
@@ -10,9 +13,6 @@ const Edit = () => {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [number, setNumber] = useState("");
-  useEffect(() => {
-    getOneContact(id);
-  }, []);
 
   function handleSave() {
     let editedContact = {
@@ -23,6 +23,9 @@ const Edit = () => {
     updateContact(id, editedContact);
     navigate("/list");
   }
+  useEffect(() => {
+    getOneContact(id);
+  }, []);
 
   useEffect(() => {
     if (oneContact) {
@@ -34,24 +37,36 @@ const Edit = () => {
 
   return (
     <div>
-      <div className="edit">
-        <input
+      <div className={styles.edit}>
+        <TextField
           value={name}
           onChange={e => setName(e.target.value)}
-          type="text"
+          required
+          label="Name"
         />
-        <input
+
+        <TextField
+          style={{ marginTop: "10px" }}
           value={lastName}
           onChange={e => setLastName(e.target.value)}
-          type="text"
+          required
+          label="surname"
         />
-        <input
+
+        <TextField
+          style={{ marginTop: "10px" }}
           value={number}
           onChange={e => setNumber(e.target.value)}
-          type="number"
+          required
+          label="number"
         />
-        <button className="edit__btn" onClick={handleSave}>
-          Save
+
+        <button
+          style={{ marginTop: "10px" }}
+          onClick={() => handleSave()}
+          className={styles.btnSave}
+          role="button">
+          <span class="text">Save</span>
         </button>
       </div>
     </div>

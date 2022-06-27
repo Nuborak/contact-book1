@@ -27,6 +27,7 @@ const ContactContextProvider = ({ children }) => {
   // ! Create
   async function createContact(newContact) {
     await axios.post(API, newContact);
+    getContacts();
   }
   async function getContacts() {
     let res = await axios(API);
@@ -49,6 +50,7 @@ const ContactContextProvider = ({ children }) => {
       type: "GET_ONE_CONTACT",
       payload: res.data,
     });
+    getContacts();
   }
 
   // ! Update
